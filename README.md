@@ -44,18 +44,8 @@ Once the server starts, open your browser and navigate to [http://localhost:3000
 
 ## Updating Remotely
 
-To pull the latest changes from the GitHub repository and ensure your local database is in sync:
+To pull the latest changes from the GitHub repository and ensure your local database is in sync, simply run:
 ```bash
-# Pull the latest code
-git pull origin main
-
-# Reinstall dependencies just in case there were updates
-npm install
-
-# Update the database schema and regenerate the client
-npx prisma generate
-npx prisma db push
-
-# Restart your server
-npm run dev
+npm run update-app
 ```
+Then you can restart your server with `npm run dev`.
