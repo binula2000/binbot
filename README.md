@@ -18,8 +18,8 @@ A highly visual, 3D-mapped Lab Inventory system. Instead of simple lists, this s
 
 1. **Clone the repository** (if you haven't already):
    ```bash
-   git clone <your-github-repo-url>
-   cd lab-inventory
+   git clone https://github.com/binula2000/binbot.git
+   cd binbot
    ```
 
 2. **Install dependencies**:
