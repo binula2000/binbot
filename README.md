@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lab Inventory & Logistics System
 
-## Getting Started
+A highly visual, 3D-mapped Lab Inventory system. Instead of simple lists, this software uses an interactive 3D environment to precisely track the location of biological samples, chemicals, and equipment down to the exact shelf or grid in a freezer.
 
-First, run the development server:
+## Features
+- **3D Architectural Mapping**: Dynamically build your lab space, spawn benches, cabinets, and freezers.
+- **Advanced Storage Hierarchies**: Define internal grid topologies for freezers and mount 10x10 vial archive boxes.
+- **Hardware Scanner Integration**: Built-in support for hardware barcode scanners (e.g., Zebra DS2208) to rapidly scan in/out inventory.
+- **Interactive Global Stock**: A comprehensive ledger of all items mapped alongside the interactive 3D map for location-specific filtering.
 
+## Installation
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm (Node Package Manager)
+
+### Setup
+
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone <your-github-repo-url>
+   cd lab-inventory
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Initialize the Database**:
+   This project uses Prisma with a local SQLite database (`dev.db`). You need to generate the Prisma client and push the schema to ensure the database is ready.
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
+
+## Running the Application
+
+To start the local development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Once the server starts, open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Updating Remotely
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To pull the latest changes from the GitHub repository and ensure your local database is in sync:
+```bash
+# Pull the latest code
+git pull origin main
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Reinstall dependencies just in case there were updates
+npm install
 
-## Learn More
+# Update the database schema and regenerate the client
+npx prisma generate
+npx prisma db push
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Restart your server
+npm run dev
+```

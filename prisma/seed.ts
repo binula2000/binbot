@@ -12,10 +12,10 @@ async function main() {
 
   console.log("Seeding Location data...");
   const fridge1 = await prisma.location.create({
-    data: { name: 'Main Refrigerator', room: 'Lab A', type: 'Fridge', diagramId: 'fridge-1' }
+    data: { name: 'Main Refrigerator', room: 'Lab A', type: 'Fridge', transformData: '[-2.5, 0, -2, 0]' }
   });
   const shelf1 = await prisma.location.create({
-    data: { name: 'Chemicals Shelf A', room: 'Lab B', type: 'Shelf', diagramId: 'shelf-1' }
+    data: { name: 'Chemicals Shelf A', room: 'Lab B', type: 'Shelf', transformData: '[2.5, 0, 1, 0]' }
   });
 
   console.log("Seeding Product data...");
